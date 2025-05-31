@@ -26,6 +26,29 @@ function addEntry(entryName) {
   });
 }
 
+function setupScrollButtons() {
+  const csvTableContainer = document.querySelector('#table-1 .table-scroll-wrapper');
+  if (!csvTableContainer) return;
+
+  const scrollAmount = 50;
+
+  document.getElementById('scroll-up').addEventListener('click', () => {
+    csvTableContainer.scrollTop -= scrollAmount;
+  });
+
+  document.getElementById('scroll-down').addEventListener('click', () => {
+    csvTableContainer.scrollTop += scrollAmount;
+  });
+
+  document.getElementById('scroll-left').addEventListener('click', () => {
+    csvTableContainer.scrollLeft -= scrollAmount;
+  });
+
+  document.getElementById('scroll-right').addEventListener('click', () => {
+    csvTableContainer.scrollLeft += scrollAmount;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('csv-file');
 
@@ -40,30 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const csv = e.target.result;
       populate(csv);
       drawChartFromCSV(csv);
+      // Setup scroll buttons after table is created
+      setupScrollButtons();
     };
     reader.readAsText(file);
   });
-});
-
-
-const csvTableContainer = document.querySelector('#csv-table .table-scroll-wrapper') || document.querySelector('#csv-table');
-
-const scrollAmount = 50;
-
-document.getElementById('scroll-up').addEventListener('click', () => {
-  csvTableContainer.scrollTop -= scrollAmount;
-});
-
-document.getElementById('scroll-down').addEventListener('click', () => {
-  csvTableContainer.scrollTop += scrollAmount;
-});
-
-document.getElementById('scroll-left').addEventListener('click', () => {
-  csvTableContainer.scrollLeft -= scrollAmount;
-});
-
-document.getElementById('scroll-right').addEventListener('click', () => {
-  csvTableContainer.scrollLeft += scrollAmount;
 });
 
 document.getElementById('file-upload')?.addEventListener('change', function (e) {

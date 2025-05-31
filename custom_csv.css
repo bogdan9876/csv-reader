@@ -128,6 +128,7 @@ input[type="text"]:focus {
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
 }
 
 .tables {
@@ -135,6 +136,7 @@ input[type="text"]:focus {
 }
 
 table {
+  min-width: 600px;
   width: 100%;
   border-collapse: collapse;
   font-size: 16px;
@@ -287,10 +289,9 @@ table th {
 
 .table-scroll-wrapper {
   max-height: 300px;
-  max-width: 100%;
+  width: 100%;
   overflow: auto;
   position: relative;
-  touch-action: none;
 }
 
 }

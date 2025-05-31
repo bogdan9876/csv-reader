@@ -1,4 +1,3 @@
-
 // Default file to be loaded with no parameter in url
 // var filename = '/logs/csv/adxl.csv';
 var filename = '';
@@ -42,7 +41,7 @@ var tableCount = 1;
 
 function getTableUnit(title, tableHtml) {
   var id = "table-" + tableCount;
-  var tableHolder = "<div class='table-holder' id='" + id + "'><b contenteditable>{@name}</b>{@table}</div>";
+  var tableHolder = "<div class='table-holder' id='" + id + "'><b contenteditable>{@name}</b><div class='table-scroll-wrapper'>{@table}</div></div>";
   tableHolder = tableHolder.replace("{@name}", title);
   tableHolder = tableHolder.replace("{@table}", tableHtml);
   tableCount++;
