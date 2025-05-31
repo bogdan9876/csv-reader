@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" charset="utf-8">
+  <title>Logs List</title>
+  <link rel="stylesheet" href="custom_csv.css" />
+</head>
+
+<body>
+  <main>
+    <div id="page-wrapper" class="clearfix">
+      <h1>Drone LOGS list interface</h1>
+      <div class=container>
+        <div id="files">
+          <div class="field">
+            <input type="file" id="csv-file" accept=".csv">
+          </div>
+        </div>
+        <div class="scroll-buttons">
+          <button id="scroll-up">▲</button>
+          <button id="scroll-down">▼</button>
+          <button id="scroll-left">◄</button>
+          <button id="scroll-right">►</button>
+        </div>
+        <div id="content">
+          <div class="tables text-center" id="csv-table"></div>
+        </div>
+      </div>
+      <figure class="highcharts-figure">
+        <canvas id="chart-container"></canvas>
+      </figure>
+    </div>
+  </main>
+  <script src="csv.js"></script>
+  <script src="index.js"></script>
+  <script src="chart.js"></script>
+</body>
+
+</html>
